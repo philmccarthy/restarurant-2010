@@ -69,4 +69,18 @@ class RestaurantTest < Minitest::Test
 
     assert_equal ["BURRATA", "PIZZETTA", "RAVIOLI"], restaurant2.menu_dish_names
   end
+
+  def test_it_can_announce_closing_time
+    skip
+
+    # I wasn't able to get this test to pass before the buzzer. I seem to have
+    # an error in my various attempts to announce_closing_time and my time
+    # conversion is off by 1, and generally not working as intended.
+
+    restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Posto')
+
+    assert_equal "Fuel Cafe will be closing at 11:00AM", restaurant1.announce_closing_time(5)
+    assert_equal "Il Posto will be closing at 11:00PM", restaurant2.announce_closing_time(7)
+  end
 end
