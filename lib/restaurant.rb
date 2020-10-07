@@ -22,4 +22,10 @@ class Restaurant
     return false if @opening_time.to_i > 12
     true
   end
+
+  def menu_dish_names
+    menu_dish_names = @dishes.map do |dish|
+                        dish.upcase
+                      end
+  end
 end
