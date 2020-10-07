@@ -55,7 +55,7 @@ class RestaurantTest < Minitest::Test
   def test_it_is_open_for_lunch
     restaurant1 = Restaurant.new('10:00', 'Fuel Cafe')
     restaurant2 = Restaurant.new('16:00', 'Il Posto')
-    assert true, restaurant1.open_for_lunch?
-    assert false, restaurant2.open_for_lunch?
+    assert restaurant1.open_for_lunch?
+    assert_equal false, restaurant2.open_for_lunch?
   end
 end
